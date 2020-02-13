@@ -28,5 +28,34 @@ class Game
     win_combination.all? { |win_index| board.cells[win_index] == "X" } ||
     win_combination.all? { |win_index| board.cells[win_index] == "O" }
   end
+  end
+  
+  def full?
+  board.cells.each {|a| return false if a == " "}
+  end
+
+  def draw?
+    if !won? && full?
+   return true 
+  end
 end
+
+def over?
+  if won? || full? || draw?
+    return true
+  end
+end
+
+def winner
+  win = won?
+    if win
+      return board.cells[win[0]]
+  end
+end
+
+def turn
+  
+end
+
+
 end
