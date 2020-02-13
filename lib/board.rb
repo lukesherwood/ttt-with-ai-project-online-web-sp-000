@@ -31,9 +31,9 @@ class Board
   def update(input, player)
     if valid_move?(input)
     #find token Value from player number/name
-    token = self.current_player
+      token = self.current_player
     #update board with move whilst converting input to index
-    @cells[input.to_i-1] = token
+      @cells[input.to_i-1] = token
     end
   end
   
