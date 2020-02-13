@@ -67,8 +67,10 @@ end
 def play
    turn until over?
     if won?
+      puts board.display
       puts "Congratulations #{winner}!"
     elsif draw?
+    puts board.display
       puts "Cat's Game!"
     end
   end
