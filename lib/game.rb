@@ -30,6 +30,12 @@ class Game
   end
   end
   
+  def win_game?(symbol)
+    WIN_COMBINATIONS.any? do |seq|
+      return true if seq.all? { |a| @cells[a] == symbol }
+    end
+  end
+  
   def full?
   board.cells.each {|a| return false if a == " "}
   end
